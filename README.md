@@ -1,6 +1,4 @@
-# Users API
-
-API feita em um vídeo postado no meu canal no YouTube. Para acessá-lo, [clique aqui](https://youtu.be/gU3kp7Aw0JI).
+# Api feita em sala de aula
 
 ## Tecnologias utilizadas
 
@@ -20,18 +18,17 @@ API feita em um vídeo postado no meu canal no YouTube. Para acessá-lo, [clique
 <pre>
 User {
   id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
+  name: string;
+  age: string;
+  address: string;
 }</pre>
 
 ## Rotas
 
-- GET /users - retorna os usuários salvos no banco
-- POST /users - cria um usuário
-- PATCH /users/:id - atualiza um usuário
-- DELETE /users/:id - deleta um usuário
+- GET /alunos - retorna os alunos salvos no banco
+- POST /alunos - cria um aluno
+- PATCH /alunos/:id - atualiza um aluno
+- DELETE /alunos/:id - deleta um aluno
 
 ## Arquitetura
 
