@@ -17,5 +17,6 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     entities: [Student,Teacher,Course,Classroom],
-    synchronize: true,
+    synchronize: false,
+
 })
