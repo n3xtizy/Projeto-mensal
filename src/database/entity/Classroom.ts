@@ -12,4 +12,5 @@ export class Classroom {
 
     @Column()
     year: Number;
+
 }
