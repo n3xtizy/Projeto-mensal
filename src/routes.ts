@@ -4,8 +4,7 @@ import { getStudent, removeStudent, saveStudent, updateStudent } from './control
 import { getClassroom, saveClassroom, updateClassroom, removeClassroom } from './controller/ClassroomController'
 import { getCourse, removeCourse, saveCourse, updateCourse } from './controller/CourseController'
 import { getTeacher, updateTeacher, removeTeacher, saveTeacher, getTeacherbyid } from './controller/TeacherController'
-import { FindTeacherByName } from './service/FindTeacherByNameService'
-import { FindTeacherByNameDto } from './dtos/findTeacherByName.dto'
+import { FindTeacherByNameController } from './controller/FindTeacherByNameController'
 
 const routes = Router()
 
@@ -39,18 +38,7 @@ routes.delete('/teacher/:id', removeTeacher)
 
 
 
-routes.get('/teachers/:name', async (req, res) => {
-    const dto = new FindTeacherByNameDto();
-    dto.name = req.params.name;
-    const findTeacher = new FindTeacherByName();
-
-    try {
-        const teachers = await findTeacher.findTeachersByName(dto);
-        res.json(teachers);
-    } catch (err) {
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
+routes.get('/teachers/:name', FindTeacherByNameController.getTeacherByName)
 
 
 export default routes
