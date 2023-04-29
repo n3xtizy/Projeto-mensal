@@ -12,8 +12,8 @@ AppDataSource.initialize()
     app.use(bodyParser.json());
     app.use(routes);
 
-    return app.listen(process.env.APP_PORT, () => {
-      console.log(`Servidor na porta: ${process.env.APP_PORT}`);
+    return app.listen('8080', () => {
+      console.log(`Servidor na porta: ${'8080'}`);
     });
   })
   .catch((e) => {

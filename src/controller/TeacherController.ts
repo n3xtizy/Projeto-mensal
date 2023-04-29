@@ -3,10 +3,19 @@ import { Teacher } from "../database/entity/Teacher";
 import { Request, Response } from "express";
 import { TeacherRepository } from "../database/repositories/teacher.repository";
 
-export const getTeacher = async (request: Request, response: Response) => {
+export const getTeacherbyid = async (request: Request, response: Response) => {
   const { id } = request.params;
   try {
     const teachers = await TeacherRepository.findOneBy({ id: parseInt(id) });
+    return response.json(teachers);
+  } catch (error) {
+    return response.status(500).json({ message: "Error" });
+  }
+};
+
+export const getTeacher = async (request: Request, response: Response) => {
+  try {
+    const teachers = await TeacherRepository.find();
     return response.json(teachers);
   } catch (error) {
     return response.status(500).json({ message: "Error" });
