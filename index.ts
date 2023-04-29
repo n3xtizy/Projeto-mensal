@@ -3,7 +3,8 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as cors from "cors";
 import routes from "./routes";
-import { AppDataSource } from "../data-source";
+import { AppDataSource } from "./data-source";
+
 
 AppDataSource.initialize()
   .then(() => {
