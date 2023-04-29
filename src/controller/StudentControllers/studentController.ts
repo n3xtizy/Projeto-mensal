@@ -5,6 +5,7 @@ import { UpdateStudent } from './updateStudent';
 import { RemoveStudent } from './removeStudent';
 
 export class StudentController {
+
   public async getStudent(request: Request, response: Response): Promise<Response> {
     const getStudent = new GetStudent();
     return getStudent.handle(request, response);
