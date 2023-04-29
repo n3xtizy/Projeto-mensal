@@ -3,5 +3,5 @@
 Steps to run this project:
 
 1. Run `npm i` command
-2. Setup database settings inside `ormconfig.json` file
-3. Run `npm start` command
+3. Set your database configs on .env
+2. Run `npm run start` command
